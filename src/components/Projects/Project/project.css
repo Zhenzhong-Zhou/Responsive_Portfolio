@@ -1,6 +1,6 @@
 .project {
     width: 30%;
-    height: 40vh;
+    height: 35vh;
     margin: 20px 10px;
     border: 2px solid rgb(243, 242, 242);
     border-radius: 10px 10px 0 0;
@@ -11,6 +11,8 @@
     height: 20px;
     background-color: rgb(243, 242, 242);
     display: flex;
+    position: sticky;
+    z-index: 2;
 }
 
 .project-circle {
@@ -22,5 +24,10 @@
 }
 
 .project-image {
+    width: 100%;
+    transition: all 10s ease;
+}
 
+.project:hover .project-image {
+    transform: translateY(-100%);
 }

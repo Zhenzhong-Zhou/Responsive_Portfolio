@@ -1,5 +1,6 @@
 import Project from "./Project/Project";
 import "./projects.css";
+import {projects} from "../../constants/constants";
 
 const Projects = () => {
 	return (
@@ -12,9 +13,9 @@ const Projects = () => {
 				</p>
 			</div>
 			<div className={"projects-list"}>
-				<Project/>
-				<Project/>
-				<Project/>
+				{projects.map((project) => (
+					<Project key={project.id} image={project.image} source={project.source} visit={project.visit}/>
+				))}
 			</div>
 		</div>
 	);
