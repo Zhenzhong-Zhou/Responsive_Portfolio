@@ -1,10 +1,11 @@
-import {About, Introduction} from "./components";
+import {About, Introduction, Projects} from "./components";
 
 const App = () => {
 	return (
 		<>
 			<Introduction/>
 			<About/>
+			<Projects/>
 		</>
 	);
 };
