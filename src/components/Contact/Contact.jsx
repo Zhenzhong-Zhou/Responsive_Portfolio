@@ -1,4 +1,5 @@
 import {useRef} from "react";
+import emailjs from "emailjs-com";
 import "./contact.css";
 import Phone from "../../assets/icons/phone.png";
 import Email from "../../assets/icons/email.png";
@@ -9,6 +10,13 @@ const Contact = () => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
+		emailjs.sendForm(process.env.REACT_APP_SERVER_ID,
+			process.env.REACT_APP_TEMPLATE_ID, formRef.current, process.env.REACT_APP_USER_ID)
+			.then((result) => {
+				console.log(result.text);
+			}, (error) => {
+				console.log(error.text);
+			});
 	};
 
 	return (
