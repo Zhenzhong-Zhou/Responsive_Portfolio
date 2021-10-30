@@ -1,4 +1,8 @@
 import reactDOM from "react-dom";
 import App from "./App";
+import {ThemeProvider} from "./context/context";
 
-reactDOM.render(<App/>, document.getElementById("root"));
+reactDOM.render(
+	<ThemeProvider>
+		<App/>
+	</ThemeProvider>, document.getElementById("root"));
