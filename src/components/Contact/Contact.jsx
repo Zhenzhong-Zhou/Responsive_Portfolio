@@ -1,4 +1,4 @@
-import {useRef} from "react";
+import {useRef, useState} from "react";
 import emailjs from "emailjs-com";
 import "./contact.css";
 import Phone from "../../assets/icons/phone.png";
@@ -7,6 +7,7 @@ import Address from "../../assets/icons/address.png";
 
 const Contact = () => {
 	const formRef = useRef();
+	const [done, setDone] = useState(false);
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
@@ -14,6 +15,7 @@ const Contact = () => {
 			process.env.REACT_APP_TEMPLATE_ID, formRef.current, process.env.REACT_APP_USER_ID)
 			.then((result) => {
 				console.log(result.text);
+				setDone(true);
 			}, (error) => {
 				console.log(error.text);
 			});
@@ -51,6 +53,7 @@ const Contact = () => {
 						<input type={"text"} placeholder={"Email"} name={"user_email"}/>
 						<textarea rows={"5"} placeholder={"Message"} name={"message"}/>
 						<button>Submit</button>
+						{done && "Thank you!"}
 					</form>
 				</div>
 			</div>
