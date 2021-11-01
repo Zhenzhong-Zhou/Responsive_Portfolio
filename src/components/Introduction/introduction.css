@@ -61,10 +61,6 @@
     align-items: center;
 }
 
-.introduction-desc {
-
-}
-
 .introduction-scroll {
     width: 30px;
     height: 30px;
@@ -92,4 +88,34 @@
     height: 100%;
     object-fit: cover;
     position: absolute;
+}
+
+@media screen and (max-width: 480px) {
+    .introduction {
+        flex-direction: column;
+    }
+
+    .introduction-hello {
+        font-size: 15px;
+    }
+
+    .introduction-name {
+        font-size: 25px;
+    }
+
+    .introduction-left-wrapper {
+        padding: 10px;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        height: 100%;
+    }
+
+    .introduction-title-item {
+        font-size: 20px;
+    }
+
+    .introduction-desc {
+        display: none;
+    }
 }
